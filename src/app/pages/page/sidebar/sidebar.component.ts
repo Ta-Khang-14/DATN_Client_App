@@ -70,7 +70,7 @@ export class SidebarComponent extends BaseComponentComponent implements OnInit {
       Text: 'Settings',
       Role: Role.All,
       IsShow: true,
-      Icon: '',
+      Icon: 'form',
     },
     {
       ID: 5,
@@ -90,12 +90,40 @@ export class SidebarComponent extends BaseComponentComponent implements OnInit {
       IsShow: true,
       Icon: '',
     },
+    {
+      ID: 9,
+      IsParent: true,
+      ParentID: 0,
+      Text: 'Cài đặt',
+      Role: Role.All,
+      IsShow: true,
+      Icon: 'setting',
+    },
+    {
+      ID: 10,
+      IsParent: false,
+      ParentID: 9,
+      Text: 'Thông tin',
+      Role: Role.All,
+      IsShow: true,
+      Icon: '',
+    },
+    {
+      ID: 11,
+      IsParent: false,
+      ParentID: 9,
+      Text: 'Đăng xuất',
+      Role: Role.All,
+      IsShow: true,
+      Icon: '',
+    },
   ];
 
   // List sau khi được xử lý
   listSideBarSort: Array<any> = [];
 
   override ngOnInit(): void {
+    super.ngOnInit();
     this.handleListSidebar();
   }
 
