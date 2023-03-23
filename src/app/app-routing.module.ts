@@ -10,7 +10,10 @@ const routes: Routes = [
   },
   {
     path: '/list-product',
-    component: ListProductComponent,
+    loadChildren: () =>
+      import('./components/list-product/list-product.module').then(
+        (m) => m.ListProductModule
+      ),
   },
 ];
 
